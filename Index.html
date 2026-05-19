@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE CO MEDIA — Campagnes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-title">ONE CO MEDIA</div>
+      <div class="sidebar-logo-sub" id="hdr-sub">Chargement...</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Opérations</div>
+      <button class="sidebar-btn active" onclick="showPage('campagnes')"><span class="icon">📋</span>Campagnes</button>
+      <button class="sidebar-btn" onclick="showPage('createurs')"><span class="icon">👤</span>Créateurs</button>
+      <div class="sidebar-section">Finance</div>
+      <button class="sidebar-btn" onclick="showPage('paiements')"><span class="icon">💳</span>Paiements</button>
+      <button class="sidebar-btn" onclick="showPage('retrocessions')"><span class="icon">🔄</span>Rétrocessions</button>
+      <button class="sidebar-btn" onclick="showPage('oneco')"><span class="icon">🧾</span>ONE CO &amp; TVA</button>
+      <div class="sidebar-section">Synthèse</div>
+      <button class="sidebar-btn" onclick="showPage('dashboard')"><span class="icon">📊</span>Tableau de bord</button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-sync">
+        <span class="sync-dot off" id="sync-dot"></span>
+        <span id="sync-status">Non connecté</span>
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:6px">
+        <button class="btn btn-sm" style="flex:1;justify-content:center" onclick="openSyncSettings()">☁ Sync</button>
+        <button class="btn btn-sm btn-success" style="flex:1;justify-content:center" onclick="exportExcel()">↓ Excel</button>
+      </div>
+      <button class="btn btn-sm" style="width:100%;justify-content:center;background:var(--info-bg);color:var(--info-bd);border-color:var(--info-bd)" onclick="backupJSON()">💾 Backup JSON</button>
+    </div>
+  </aside>
+  <main class="main-content">
+    <div class="wrap">
+      <div id="page-campagnes" class="page active"></div>
+      <div id="page-createurs" class="page"></div>
+      <div id="page-paiements" class="page"></div>
+      <div id="page-retrocessions" class="page"></div>
+      <div id="page-oneco" class="page"></div>
+      <div id="page-dashboard" class="page"></div>
+    </div>
+  </main>
+</div>
+<div id="modal-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
